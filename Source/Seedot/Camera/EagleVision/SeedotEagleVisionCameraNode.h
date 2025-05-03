@@ -55,7 +55,7 @@ namespace Seedot
 {
 	class FSeedotEagleVisionCameraNodeEvaluator final : public UE::Cameras::FCameraNodeEvaluator
 	{
-		UE_DECLARE_CAMERA_NODE_EVALUATOR(YABW_API, FSeedotEagleVisionCameraNodeEvaluator)
+		UE_DECLARE_CAMERA_NODE_EVALUATOR(SEEDOT_API, FSeedotEagleVisionCameraNodeEvaluator)
 
 	protected:
 		virtual void OnInitialize(const UE::Cameras::FCameraNodeEvaluatorInitializeParams& Params,
