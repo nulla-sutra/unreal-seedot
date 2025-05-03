@@ -1,19 +1,19 @@
 ﻿// Copyright 2019-Present tarnishablec. All Rights Reserved.
 
-#include "YabwEagleVisionCameraNode.h"
+#include "SeedotEagleVisionCameraNode.h"
 
 #include "Core/CameraEvaluationContext.h"
 #include "Kismet/KismetMathLibrary.h"
 
-namespace Yabw
+namespace Seedot
 {
-	UE_DEFINE_CAMERA_NODE_EVALUATOR(FYabwEagleVisionCameraNodeEvaluator)
+	UE_DEFINE_CAMERA_NODE_EVALUATOR(FSeedotEagleVisionCameraNodeEvaluator)
 
-	void FYabwEagleVisionCameraNodeEvaluator::OnInitialize(
+	void FSeedotEagleVisionCameraNodeEvaluator::OnInitialize(
 		const UE::Cameras::FCameraNodeEvaluatorInitializeParams& Params,
 		UE::Cameras::FCameraNodeEvaluationResult& OutResult)
 	{
-		const auto* Node = GetCameraNodeAs<UYabwEagleVisionCameraNode>();
+		const auto* Node = GetCameraNodeAs<USeedotEagleVisionCameraNode>();
 
 		YawInputReader.Initialize(Node->YawInput);
 		YawScaleReader.Initialize(Node->YawSpeed);
@@ -28,7 +28,7 @@ namespace Yabw
 		LookAtOffset = Node->InitialLookAtOffset.Variable->DefaultValue;
 	}
 
-	void FYabwEagleVisionCameraNodeEvaluator::OnRun(const UE::Cameras::FCameraNodeEvaluationParams& Params,
+	void FSeedotEagleVisionCameraNodeEvaluator::OnRun(const UE::Cameras::FCameraNodeEvaluationParams& Params,
 	                                                UE::Cameras::FCameraNodeEvaluationResult& OutResult)
 	{
 		const auto* PlayerController = Params.EvaluationContext->GetPlayerController();
@@ -38,7 +38,7 @@ namespace Yabw
 		}
 
 		const auto* Pawn = PlayerController->GetPawnOrSpectator();
-		if (!ensure(Pawn))
+		if (!Pawn)
 		{
 			return;
 		}
@@ -99,7 +99,7 @@ namespace Yabw
 }
 
 
-FCameraNodeEvaluatorPtr UYabwEagleVisionCameraNode::OnBuildEvaluator(FCameraNodeEvaluatorBuilder& Builder) const
+FCameraNodeEvaluatorPtr USeedotEagleVisionCameraNode::OnBuildEvaluator(FCameraNodeEvaluatorBuilder& Builder) const
 {
-	return Builder.BuildEvaluator<Yabw::FYabwEagleVisionCameraNodeEvaluator>();
+	return Builder.BuildEvaluator<Seedot::FSeedotEagleVisionCameraNodeEvaluator>();
 }

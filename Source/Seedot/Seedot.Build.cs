@@ -4,9 +4,9 @@ using UnrealBuildTool;
 
 // ReSharper disable UseCollectionExpression
 
-public class Yabw : ModuleRules
+public class Seedot : ModuleRules
 {
-	public Yabw(ReadOnlyTargetRules target) : base(target)
+	public Seedot(ReadOnlyTargetRules target) : base(target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 

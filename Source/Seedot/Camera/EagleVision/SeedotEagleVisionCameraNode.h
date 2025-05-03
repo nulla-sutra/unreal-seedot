@@ -6,13 +6,13 @@
 #include "Core/CameraNode.h"
 #include "Core/CameraParameterReader.h"
 #include "Core/CameraParameters.h"
-#include "YabwEagleVisionCameraNode.generated.h"
+#include "SeedotEagleVisionCameraNode.generated.h"
 
 /**
  * 
  */
-UCLASS(meta=(CameraNodeCategories = "Eagle"), DisplayName = "Eagle Vision View (Yabw)")
-class YABW_API UYabwEagleVisionCameraNode : public UCameraNode
+UCLASS(meta=(CameraNodeCategories = "Eagle"), DisplayName = "Eagle Vision View (Seedot)")
+class SEEDOT_API USeedotEagleVisionCameraNode : public UCameraNode
 {
 	GENERATED_BODY()
 
@@ -51,11 +51,11 @@ public:
 	FTransform3dCameraParameter InitialLookAtOffset;
 };
 
-namespace Yabw
+namespace Seedot
 {
-	class FYabwEagleVisionCameraNodeEvaluator final : public UE::Cameras::FCameraNodeEvaluator
+	class FSeedotEagleVisionCameraNodeEvaluator final : public UE::Cameras::FCameraNodeEvaluator
 	{
-		UE_DECLARE_CAMERA_NODE_EVALUATOR(YABW_API, FYabwEagleVisionCameraNodeEvaluator)
+		UE_DECLARE_CAMERA_NODE_EVALUATOR(YABW_API, FSeedotEagleVisionCameraNodeEvaluator)
 
 	protected:
 		virtual void OnInitialize(const UE::Cameras::FCameraNodeEvaluatorInitializeParams& Params,

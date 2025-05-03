@@ -2,7 +2,7 @@
   "FileVersion": 3,
   "Version": 1,
   "VersionName": "1.0",
-  "FriendlyName": "Yabw",
+  "FriendlyName": "Seedot",
   "Description": "",
   "Category": "Other",
   "CreatedBy": "tarnishablec",
@@ -15,7 +15,7 @@
   "Installed": false,
   "Modules": [
     {
-      "Name": "Yabw",
+      "Name": "Seedot",
       "Type": "Runtime",
       "LoadingPhase": "Default"
     }
