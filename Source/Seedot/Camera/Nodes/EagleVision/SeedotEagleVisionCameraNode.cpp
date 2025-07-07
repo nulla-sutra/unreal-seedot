@@ -32,7 +32,7 @@ namespace Seedot
 	                                                UE::Cameras::FCameraNodeEvaluationResult& OutResult)
 	{
 		const auto* PlayerController = Params.EvaluationContext->GetPlayerController();
-		if (!ensure(PlayerController))
+		if (!(PlayerController))
 		{
 			return;
 		}
