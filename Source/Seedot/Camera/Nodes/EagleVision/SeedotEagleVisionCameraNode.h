@@ -11,7 +11,7 @@
 /**
  * 
  */
-UCLASS(meta=(CameraNodeCategories = "Eagle"), DisplayName = "Eagle Vision View (Seedot)")
+UCLASS(meta=(CameraNodeCategories = "Seedot"), DisplayName = "Eagle Vision View (Seedot)")
 class SEEDOT_API USeedotEagleVisionCameraNode : public UCameraNode
 {
     GENERATED_BODY()

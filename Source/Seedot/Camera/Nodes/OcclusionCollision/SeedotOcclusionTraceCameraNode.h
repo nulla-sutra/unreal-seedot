@@ -9,7 +9,7 @@
 /**
  * 
  */
-UCLASS()
+UCLASS(meta=(CameraNodeCategories = "Seedot"), DisplayName = "Occlusion Trace (Seedot)")
 class SEEDOT_API USeedotOcclusionTraceCameraNode : public UCameraNode
 {
     GENERATED_BODY()
@@ -18,7 +18,7 @@ protected:
     virtual FCameraNodeEvaluatorPtr OnBuildEvaluator(FCameraNodeEvaluatorBuilder& Builder) const override;
 
 public:
-    UPROPERTY(EditAnywhere, Category="Seedot")
+    UPROPERTY(EditAnywhere, Category="Occlusion")
     TMap<TEnumAsByte<ECollisionChannel>, TEnumAsByte<ECollisionResponse>> ResponseOverrides;
 };
 
