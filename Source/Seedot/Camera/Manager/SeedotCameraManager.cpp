@@ -8,12 +8,15 @@
 
 void ASeedotCameraManager::UpdateViewTarget(FTViewTarget& OutVT, float DeltaTime)
 {
-    const auto PC = GetOwningPlayerController();
+	const auto PC = GetOwningPlayerController();
 
-    const auto GameplayCameraComp = PC->GetComponentByClass<UGameplayCameraComponentBase>();
+	const auto GameplayCameraComp = PC->GetComponentByClass<UGameplayCameraComponentBase>();
 
-    if (GameplayCameraComp)
-    {
-        GameplayCameraComp->GetCameraSystemEvaluator()->GetEvaluatedCameraView(OutVT.POV);
-    }
+	if (GameplayCameraComp)
+	{
+		if (const auto Evaluator = GameplayCameraComp->GetCameraSystemEvaluator())
+		{
+			Evaluator->GetEvaluatedCameraView(OutVT.POV);
+		}
+	}
 }
