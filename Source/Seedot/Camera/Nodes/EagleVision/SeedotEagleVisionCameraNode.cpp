@@ -3,6 +3,8 @@
 #include "SeedotEagleVisionCameraNode.h"
 
 #include "Core/CameraEvaluationContext.h"
+#include "GameFramework/Pawn.h"
+#include "GameFramework/PlayerController.h"
 #include "Kismet/KismetMathLibrary.h"
 
 namespace Seedot

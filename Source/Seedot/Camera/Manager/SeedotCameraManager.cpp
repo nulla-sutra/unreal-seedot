@@ -5,6 +5,7 @@
 
 #include "Core/CameraSystemEvaluator.h"
 #include "GameFramework/GameplayCameraComponentBase.h"
+#include "GameFramework/PlayerController.h"
 
 void ASeedotCameraManager::UpdateViewTarget(FTViewTarget& OutVT, float DeltaTime)
 {
